@@ -1,76 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Be My Valentine?</title>
-    <style>
-        body {
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            height: 100vh;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be My Valentine?</title>
 
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            position: relative;
-        }
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: #ffd6e8;
+    overflow: hidden;
+}
 
-        h1 {
-            color: #ff4b6e;
-        }
+/* Card */
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    text-align: center;
+    position: relative;
+}
 
-        button {
-            padding: 15px 30px;
-            margin: 10px;
-            border: none;
-            border-radius: 10px;
-            font-size: 18px;
-            cursor: pointer;
-        }
+h1 {
+    color: #ff4f81;
+}
 
-        #yes {
-            background-color: #ff4b6e;
-            color: white;
-        }
+button {
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        #no {
-            background-color: #ccc;
-            position: absolute;
-        }
-    </style>
+#yes {
+    background-color: #ff4f81;
+    color: white;
+}
+
+#yes:hover {
+    transform: scale(1.1);
+}
+
+#no {
+    background-color: #ffc2d1;
+    position: absolute;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/* Final Page */
+.final {
+    text-align: center;
+    padding: 20px;
+}
+
+.final img {
+    width: 200px;
+    border-radius: 20px;
+    margin: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+</style>
 </head>
+
 <body>
-    <div class="card">
-        <h1>Will you be my Valentine? ❤️</h1>
-        <button id="yes" onclick="sayYes()">Yes</button>
-        <button id="no">No</button>
-    </div>
 
-    <script>
-        const noBtn = document.getElementById("no");
+<div class="card">
+    <h1>Will you be my Valentine? 🦆💕</h1>
+    <button id="yes" onclick="showModal()">Yes</button>
+    <button id="no">No</button>
+</div>
 
-        noBtn.addEventListener("mouseover", () => {
-            const x = Math.random() * 200 - 100;
-            const y = Math.random() * 200 - 100;
-            noBtn.style.transform = `translate(${x}px, ${y}px)`;
-        });
+<script>
+const noBtn = document.getElementById("no");
 
-        function sayYes() {
-            document.body.innerHTML = `
-                <div style="text-align:center; font-family:Arial;">
-                    <h1 style="color:#ff4b6e;">Yay! ❤️</hh1>
-                    <p>Best Valentine ever!</p>
-                </div>
-            `;
-        }
-    </script>
+noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * 300 - 150;
+    const y = Math.random() * 200 - 100;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+function showModal() {
+    const modal = document.createElement("div");
+    modal.classList.add("modal");
+    modal.innerHTML = `
+        <div class="modal-content">
+            <h2>DUMP YOUR VALENTINE 💔</h2>
+            <button onclick="finalPage()">DUMP HER 💔</button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+}
+
+function finalPage() {
+    document.body.innerHTML = `
+        <div class="final">
+            <h1 style="color:#ff4f81;">YAYYYYY 💕</h1>
+            <p>You chose correctly 😌</p>
+            <p>Best Valentine Ever <33</p>
+            <img src="cat1.jpg">
+            <img src="cat2.jpg">
+            <img src="cat3.jpg">
+        </div>
+    `;
+}
+</script>
+
 </body>
 </html>
