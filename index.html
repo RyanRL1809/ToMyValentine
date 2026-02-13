@@ -113,8 +113,8 @@ function showModal() {
     modal.classList.add("modal");
     modal.innerHTML = `
         <div class="modal-content">
-            <h2>DUMP YOUR VALENTINE 💔</h2>
-            <button onclick="finalPage()">DUMP HER 💔</button>
+            <h2>DUMP YOUR VALENTINE‼️‼️</h2>
+            <button onclick="finalPage()">DUMP HER NOW 💔</button>
         </div>
     `;
     document.body.appendChild(modal);
@@ -122,13 +122,34 @@ function showModal() {
 
 function finalPage() {
     document.body.innerHTML = `
-        <div class="final">
-            <h1 style="color:#ff4f81;">YAYYYYY 💕</h1>
-            <p>You chose correctly 😌</p>
-            <p>Best Valentine Ever <33</p>
-            <img src="cat1.jpg">
-            <img src="cat2.jpg">
-            <img src="cat3.jpg">
+        <div class="final" style="
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            background: url('finalbg.jpg') no-repeat center center;
+            background-size: cover;
+        ">
+            <h1 style="
+                font-size:60px;
+                color:#ff2e63;
+                margin-bottom:15px;
+                text-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+            ">
+                LOVE YOU MY VALENTINE ❤️
+            </h1>
+
+            <h2 style="color:#ff4f81;">YAYYYYY 💕</h2>
+            <p>You chose correctly 😄</p>
+            <p>Best Valentine Ever &lt;33</p>
+
+            <div style="margin-top:20px;">
+                <img src="cat1.jpg" style="width:200px; border-radius:20px; margin:10px; box-shadow:0 10px 20px rgba(0,0,0,0.2);">
+                <img src="cat2.jpg" style="width:200px; border-radius:20px; margin:10px; box-shadow:0 10px 20px rgba(0,0,0,0.2);">
+                <img src="cat3.jpg" style="width:200px; border-radius:20px; margin:10px; box-shadow:0 10px 20px rgba(0,0,0,0.2);">
+            </div>
         </div>
     `;
 }
@@ -136,4 +157,5 @@ function finalPage() {
 
 </body>
 </html>
+
 
